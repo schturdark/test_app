@@ -2,24 +2,18 @@
 
 <table>
   <tr>
-    <th>Content</th>
     <th></th>
-    <th></th>
-    <th></th>
+    <th>Content</th>    
   </tr>
 
 <% @records.each do |record| %>
   <tr>
+    <td><%= link_to 'x', record, :confirm => 'Are you sure?', :method => :delete %></td>
     <td><%= record.content %></td>
-    <td><%= link_to 'Show', record %></td>
-    <td><%= link_to 'Edit', edit_record_path(record) %></td>
-    <td><%= link_to 'Destroy', record, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
-<%= render 'form' %>
-
 <br />
 
-<%= link_to 'New Record', new_record_path %>
+<%= render 'form' %>
