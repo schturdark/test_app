@@ -4,6 +4,8 @@ class RecordsController < ApplicationController
   def index
     @records = Record.all
 
+    @record = Record.new
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @records }
